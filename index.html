@@ -9,23 +9,26 @@
   </head>
   <body>
     <img src="images/IMG_20260110_134205.jpg">
-     <h6>For school & College student</h6>
+     <h6>For help of school & College </h6>
            <p>----------------------------------------------------------------</p>
-            <div class="container">
-                <div>
-            <a href="main.html"><h5> Main Website</h5></a>
+           <div class="card">
+            <div class="card-header">
+                            <a href="main.html"><h5> Main Website</h5></a>
+
             </div>
-              <div> 
-                         <a href="school.html"><h5>School  Student</h5></a>
-                         </div>
-                         <div>
-            <a href="college.html"><h5>College Student</h5></a>
-</div>
-              <div> 
-                         <a href="admitcard.html"><h5>Admit Card</h5></a>
-                         </div>
-  </div>
-  <p>-----------------------------------------------------------------------</p>
+                        <div class="card-header">
+                            <a href="college.html"><h5> College Section</h5></a>
+            </div>
+            <div class="card-header">
+                          <a href="school.html"><h5>School Section</h5></a>
+            </div>
+            <div class="card-header">
+                          <a href="admitcard.html"><h5>Admit Card</h5></a>
+            </div>
+
+           </div>
+           <br>
+   <p>-----------------------------------------------------------------------</p>
   <div class="box1"> 
   <h6>Website developed by @Tech Global</h6>
   <h6>Updated ON 15 Jnauary 2025<br><p2>AT</p2><br><p3>01:05 AM</p3></h6>
@@ -33,7 +36,14 @@
   <style>
     body{
         font-family: Arial, Helvetica, sans-serif;
-        background-color: whitesmoke;
+        background-color: palevioletred;
+     }
+     .card{
+        width: 200px;
+        margin-left: 2cm;
+      }
+     .card-header{
+        background-color: lightcyan;
      }
     img{
         margin-top: 2cm;
@@ -57,6 +67,8 @@
         margin-left: 2.5cm;
         margin-top: 0.5cm;
         color: yellow;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-style: oblique;
     }
     h5{
         margin-bottom: 1cm;
@@ -67,24 +79,7 @@
         color: black;
         text-align: center;
       }
-    .container{
-         display: flex;
-        flex-direction: column;
-        background-color: green;
-        width: 250px;
- 
-     }
-     .container div{
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        width: 200px;
-         background:linear-gradient(to bottom, black 40%,  red 80%);
-        margin: 10px;
-        padding: 10px;
-        font-size: 30px;
-        }
-     p{
+      p{
         color: black;
         margin-left: 2cm;
     }
