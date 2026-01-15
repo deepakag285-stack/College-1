@@ -23,73 +23,95 @@
             <div class="row">
                 <div class="col">
                     <div>
-                        <ul class="nav nav-tabs">    
-           <li class="col-3" class="nav-item"><a class="nav-link" href="#question" data-bs-toggle="tab">PYQ</a></li>
-        <li class="col-3" class="nav-item"><a class="nav-link" href="#notes" data-bs-toggle="tab">notes</a></li>
-                    <li class="col-3" class="nav-item"><a class="nav-link" href="#syllabs" data-bs-toggle="tab">syllabs</a></li>
-
-        <li class="col-3" class="nav-item"><a class="nav-link" href="#result" data-bs-toggle="tab">result</a></li>
+                        <ul class="nav nav-tabs">  
+                            <li class="tabs dropdown"> 
+                                <a href="" class="tabs-link dropdown-toggle" data-bs-toggle="dropdown">Select Class</a>
+                             <div class="dropdown-menu">
+                                <a href="bsc.html" class="dropdown-item">Bachler of science(BSC)</a>
+                                                                <a href="bca.html" class="dropdown-item">Bachler Of Computer Application(BCA)</a>
+                                <a href="ba.html" class="dropdown-item">Bachler Of Arts(BA)</a>
+                             </div></li>
+                      <li class="col-4" class="nav-item"><a class="nav-link" href="#syllabs" data-bs-toggle="tab">syllabs</a></li>
+        <li class="col-4" class="nav-item"><a class="nav-link" href="#result" data-bs-toggle="tab">result</a></li>
 
       </ul>
   </div>
 </div>
 </div>
-<div class="tab-content">
-    <div id="syllabs" class="tab-pane fade in">
-        <br>
-        <table class="table table-border">
-            <tr>
-                <th>Sr.no</th>
-                <th>Subject</th>
-                <th>Action</th>
-            </tr>
-            <tr> 
-            <td>1</td>
-            <td></td>
-            <td><a href="">download</td>
-                </tr>
-                            <tr> 
-            <td>2</td>
-            <td></td>
-            <td><a href="">download</td>
-                </tr>
-            <tr> 
-            <td>3</td>
-            <td></td>
-            <td><a href="">download</td>
-                </tr>
-            <tr> 
-            <td>4</td>
-            <td></td>
-            <td><a href="">download</td>
-                </tr>
-            <tr> 
-            <td>5</td>
-            <td></td>
-            <td><a href="">download</td>
-                </tr>
-         <tr> 
-            <td>6</td>
-            <td></td>
-            <td><a href="">download</td>
-                </tr>
-
-        </table>
-        </div>
-        <div id="result" class="tab-pane fade in">
-             <a class="adu" href="https://cbluse.ucanapply.com/declared-results">check your result</a>
-        </div>
-      </div>
-  <br>
+<br>
 <div class="card">
     <div class="card-img">
         <img src="images/college.webp">
     </div>
 </div>
-    </body>
+<hr>
+<div class="tab-content">
+    <div id="syllabs" class="tab-pane fade in">
+        <br>
+        <table class="table table-border">
+            <tr>
+                <h4>*Syllabs Of UG/PG</h4>
+                <th>Sr.no</th>
+                <th>UG/PG</th>
+                <th>Action</th>
+            </tr>
+            <tr> 
+            <td>1</td>
+            <td>Undergraduate</td>
+            <td><a href="https://cblu.ac.in/ug-syllabi/">download</td>
+                </tr>
+                            <tr> 
+            <td>2</td>
+            <td>Post-graduate</td>
+            <td><a href="https://cblu.ac.in/pg-syllabi/">download</td>
+                </tr>
+
+         </table>
+        </div>
+        <div id="result" class="tab-pane fade in">
+            <br>
+                    <table class="table table-border">
+            <tr>
+                <h4>*Result Of Following Exams</h4>
+                <th>Sr.no</th>
+                <th>Exams Name</th>
+                <th>Action</th>
+            </tr>
+            <tr> 
+            <td>1</td>
+            <td>CBLU</td>
+            <td><a href="https://cbluse.ucanapply.com/declared-results">see</td>
+                </tr>
+                            <tr> 
+            <td>2</td>
+            <td></td>
+            <td><a href="">see</td>
+                </tr>
+
+         </table>
+
+         </div>
+      </div>
+  <br>
+     </body>
 <style>
     body{
         background-color:dimgray;
+    }
+    .ba{
+        color: blue;
+    }
+    .tabs-link{
+        color: white;
+    }
+    .tabs-link:hover{
+        color: black;
+    }
+    .bsc{
+        color: red;
+    }
+    hr{
+        color: aliceblue;
     }
     img{
         height: 250px;
@@ -120,6 +142,11 @@
     }
     td{
         font-style: italic;
+    }
+    h4{
+        color: red;
+        font-style: italic;
+        margin-left: 2cm;
     }
       a{
         color: black;
