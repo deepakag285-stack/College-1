@@ -1,94 +1,151 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secure Redirect</title>
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:linear-gradient(45deg,red 60%,green 50%); display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .container { background: yellow; padding: 30px; border-radius: 12px; box-shadow: 0 10px 25px #0000001a; width: 350px; }
-        h2 { text-align: center; color: #333; margin-bottom: 20px; }
-        input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; font-size: 16px; }
-        button { width: 100%; padding: 12px; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; transition: 0.3s; margin-top: 10px; }
-        .btn-primary { background-color: #007bff; color: white; }
-        .btn-primary:hover { background-color: #0056b3; }
-        .toggle-btn { background: none; color: #007bff; text-decoration: underline; font-size: 14px; margin-top: 15px; }
-        .error { color: #dc3545; font-size: 14px; text-align: center; display: none; margin-top: 10px; }
-    </style>
-</head>
-<body>
+    <title>Document</title>
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
-<div class="container" id="authBox">
-    <h2 id="title">Create Account</h2>
-    
-    <input type="text" id="userInput" placeholder="Enter Username">
-    <input type="password" id="passInput" placeholder="Enter Password">
-    
-    <button class="btn-primary" id="actionBtn" onclick="processAuth()">Sign Up</button>
-    
-    <div id="errorMessage" class="error">Invalid Credentials!</div>
-    
-    <button class="toggle-btn" onclick="toggleForm()" id="toggleBtn">Already have an account? Login</button>
+    <link rel="">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <br>
+        <button onclick="dark()"><i class="fa-solid fa-moon"></i></button>
+        <button onclick="light()"><i class="fa-solid fa-sun"></i></button>
+<hr>
+    <div class="card">
+  <div class="card-header">
+    <h2 class="h">Announcement</h2> 
+  </div>
+  <div class="card-title"> 
+    <marquee scrollamount="4" scrolldelay="5"> 
+    complete website has been developed & design and all section s updated but college section is updating slowly due to obtaining pyq/notes
+  </marquee>
+    </div>
 </div>
 
-<script>
-    let isLoginMode = false; // Starts in Sign Up mode
-    
-    // Change this to the website you want to open
-    const targetUrl = "home.html"; 
+     <h6 class="r">* Only Cblu affilated colege and hbse(9 to  12th class) &result of hbse&cbse</h6>
+    <img src="images/IMG_20260110_134205.jpg">
+     <h6>For help of school & College </h6>
+           <p>----------------------------------------------------------------</p>
+           <div class="card">
+            <div class="card-header">
+                            <a href="hello.html"><h5> Main Website</h5></a>
+ 
+            </div>
+            <br>
+                         <div class="card-header">
+                            <a href="college.html"><h5> College Section</h5></a>
+            </div>
+                        <br>
 
-    function toggleForm() {
-        isLoginMode = !isLoginMode;
-        const title = document.getElementById('title');
-        const actionBtn = document.getElementById('actionBtn');
-        const toggleBtn = document.getElementById('toggleBtn');
-        const error = document.getElementById('errorMessage');
+                        <div class="card-header">
+                          <a href="school.html"><h5>School Section</h5></a>
+            </div>
+ 
+            <br>
+             <div class="card-header">
+                          <a href="admitcard.html"><h5>Admit Card/College helpline</h5></a>
+            </div>
 
-        error.style.display = "none";
-
-        if (isLoginMode) {
-            title.innerText = "Login";
-            actionBtn.innerText = "Login";
-            toggleBtn.innerText = "Need an account? Sign Up";
-        } else {
-            title.innerText = "Create Account";
-            actionBtn.innerText = "Sign Up";
-            toggleBtn.innerText = "Already have an account? Login";
-        }
+           </div>
+           <br>
+   <p>-----------------------------------------------------------------------</p>
+  <div class="box1"> 
+  <h6>Website developed by @Tech Global</h6>
+  <h6>Updated ON 17 Jnauary 2025<br><p2>AT</p2><br><p3>00:29 AM</p3></h6>
+  </div>
+  <script>
+     function dark(){
+        document.body.style.backgroundColor="black";
+        document.body.style.color="white";
+    }
+        function light(){
+        document.body.style.backgroundColor="white";
+        document.body.style.color="black";
     }
 
-    function processAuth() {
-        const userValue = document.getElementById('userInput').value;
-        const passValue = document.getElementById('passInput').value;
-        const error = document.getElementById('errorMessage');
+   </script>
 
-        if (!userValue || !passValue) {
-            alert("Please enter both fields");
-            return;
-        }
-
-        if (!isLoginMode) {
-            // --- SIGN UP LOGIC ---
-            localStorage.setItem('storedUser', userValue);
-            localStorage.setItem('storedPass', passValue);
-            alert("Account Created! Now please Login.");
-            toggleForm(); // Switch to login mode automatically
-        } else {
-            // --- LOGIN LOGIC ---
-            const savedUser = localStorage.getItem('storedUser');
-            const savedPass = localStorage.getItem('storedPass');
-
-            // Check if Login credentials match the Sign Up credentials
-            if (userValue === savedUser && passValue === savedPass) {
-               // alert("Match found! Opening website...");
-                window.location.href =  targetUrl; // Redirect to the URL
-            } else {
-                error.style.display = "block";
-                error.innerText = "Login failed: Credentials do not match.";
-            }
-        }
+   <style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: palevioletred;
+     }
+  .h{
+    margin-left: 1cm;
+    color: red;
+}
+button{
+  margin-left: 3cm;
+}
+     .r{
+        color: white;
+        margin-left: 1cm;
+      }
+     .card{
+        width: 250px;
+        margin-left: 2cm;
+         }
+     img{
+        margin-top: 2cm;
+        margin-left: 3cm;
+        border-radius: 7cm;
+        height: 150px;
+        width: 150px;
+         
     }
-  </script>
-
-</body>
+     .box1{
+        background-color: black;
+        margin-top: 1.5cm;
+    }
+    p2{
+        margin-left: 2cm;
+    }
+    p3{
+        margin-left: 1cm;
+    }
+     h6{
+        margin-left: 2.5cm;
+        margin-top: 0.5cm;
+        color: yellow;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-style: oblique;
+    }
+    h5{
+        margin-bottom: 1cm;
+        color:black;
+      }
+     a{
+        text-decoration: none;
+        color: black;
+        text-align: center;
+      }
+      .card-header{
+      background-color: green;
+       }
+      p{
+        color: black;
+        margin-left: 2cm;
+    }
+    h2{
+        margin-left: 1cm;
+        color: red;
+    }
+    h4{
+        color: black;
+    }
+ </style>
+  </body>
 </html>
