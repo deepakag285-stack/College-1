@@ -20,6 +20,47 @@
 
   </head>
   <body>
+    <!-- images show first after open index page -->
+        <div id="imageOverlay" class="overlay">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeImage()">&times;</span>
+        <img src="images/IMG_20260417_201150.png" width="450px" height="250px" style="margin-left: 0.5cm;" alt="Welcome Image">
+    </div>
+</div>
+<style> 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    display: flex;
+     align-items: center;
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+.modal-content {
+    position: relative;
+    max-width: 100%;
+}
+
+.close-btn {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+</style>
+<script> 
+function closeImage() {
+    document.getElementById("imageOverlay").style.display = "none";
+}
+</script>
+<!--end-->
+
                      <a  href="https://wa.me/8684899869?text= How can i help you"
      class="whatshap-float" ><img  class="ji" src="images/QtvHd6lI9q4iydr59B.gif"></a>
   <br>
@@ -64,7 +105,7 @@
             <hr>
    <div class="box1"> 
   <h6>Website developed by Deepak aggarwal</h6>
-  <h6>Updated on 16 April-2026<br><p2>AT</p2><br><p3>19:36 PM</p3></h6>
+  <h6>Updated on 19 April-2026<br><p2>AT</p2><br><p3>09:36 AM</p3></h6>
      </div>
    <style>
      body{
