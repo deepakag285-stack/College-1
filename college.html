@@ -16,6 +16,79 @@
  
 </head>
 <body>
+    <style>
+    #menu button {
+    margin: 5px;
+    padding: 10px;
+    color: white;
+    background: #555;
+    border: none;
+    cursor: pointer;
+}
+
+/* PDF container */
+#pdf-container canvas {
+    width: 100%;
+}
+
+ .watermark {
+    position: fixed;
+    top: 40%;
+    left: 20%;
+    font-size: 30px;
+    color: rgba(0,0,0,0.15);
+    transform: rotate(-30deg);
+    pointer-events: none;
+    z-index: 9999;
+}
+
+ .blur {
+    filter: blur(15px);
+}
+</style>
+<div class="watermark" id="wm"></div>
+<div id="pdf-container"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+
+<script>
+ let user = "Deepak | " + new Date().toLocaleString();
+document.getElementById("wm").innerText = user;
+
+ function loadPDF(url) {
+    document.getElementById("pdf-container").innerHTML = "";
+
+    pdfjsLib.getDocument(url).promise.then(pdf => {
+        for (let i = 1; i <= pdf.numPages; i++) {
+            pdf.getPage(i).then(page => {
+                let canvas = document.createElement("canvas");
+                let ctx = canvas.getContext("2d");
+
+                let viewport = page.getViewport({ scale: 1.5 });
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                page.render({
+                    canvasContext: ctx,
+                    viewport: viewport
+                });
+
+                document.getElementById("pdf-container").appendChild(canvas);
+            });
+        }
+    });
+}
+
+// 🔹 Disable copy
+document.addEventListener("copy", e => e.preventDefault());
+document.addEventListener("contextmenu", e => e.preventDefault());
+document.addEventListener("selectstart", e => e.preventDefault());
+
+// 🔹 Blur on tab change
+document.addEventListener("visibilitychange", () => {
+    document.body.classList.toggle("blur", document.hidden);
+});
+</script>
          <canvas id="wmCanvas"></canvas>
 <script>
 let canvas = document.getElementById("wmCanvas");
@@ -137,9 +210,9 @@ document.onkeydown = function(e) {
 <br><br>
     <div class="todo" > 
     <marquee > 
-                                             <img class="ig-67"src="images/oM5kD4MuSqXjhdCiSh.gif"><a href="pdf/Document.pdf"><h8> regarding pyq uploaded<sup>06-05-2026</sup></a></h8>
-                                                                                                                           <img class="ig-67"src="images/oM5kD4MuSqXjhdCiSh.gif"><h8>Common paper of 3rd and 2nd sem(nep) uploaded(2024-dec) <sup>28-4-2026</sup></h8>
-                                                                                            </marquee>
+        <div id="menu">
+    <img class="ig-67" src="images/oM5kD4MuSqXjhdCiSh.gif"><button onclick="loadPDF('pdf/Document.pdf')">regarding pyq uploaded<sup>06-05-2026</sup></button>
+</div>                                                                                                                                                                                                                  </marquee>
     </div>
 <hr>
  <h6>*For major pyq click on  select class </h6>
