@@ -42,35 +42,6 @@
 
     </style>
          <canvas id="wmCanvas"></canvas>
-<script>
-let canvas = document.getElementById("wmCanvas");
-let ctx = canvas.getContext("2d");
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let text = " DEEPAK   | " + new Date().toLocaleString();
-
-ctx.font = "20px Arial";
-ctx.fillStyle = "rgba(0.3,0.3,0.3,0.3)";
-ctx.rotate(-0.5);
-
-for (let x = -500; x < canvas.width; x += 300) {
-    for (let y = 0; y < canvas.height; y += 150) {
-        ctx.fillText(text, x, y);
-    }
-}
-</script>
-
-<style>
-#wmCanvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 9999;
-}
-</style>
 
         <style>
    body {
@@ -99,47 +70,12 @@ for (let x = -500; x < canvas.width; x += 300) {
 
  </style>
 <script>
-   document.addEventListener('contextmenu', e => e.preventDefault());
 
-   document.addEventListener('keydown', function(e) {
-    if (
-      e.keyCode === 123 || // F12
-      (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 83 || e.keyCode === 80)) || // Ctrl+U, S, P
-      (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) // Ctrl+I/J/C
-    ) {
-      e.preventDefault();
-      alert("Security Alert: Content is Protected!");
-      return false;
-    }
-  });
-   document.addEventListener('keyup', (e) => {
-    if (e.key === 'PrintScreen') {
-      navigator.clipboard.writeText(''); // क्लिपबोर्ड खाली करना
-      alert('Screenshots are disabled!');
-    }
-  });
-  setInterval(function() {
-    const threshold = 160;
-    if (window.outerWidth - window.innerWidth > threshold || window.outerHeight - window.innerHeight > threshold) {
-      document.body.innerHTML = "<h2 style='text-align:center; color:red; margin-top:20%'>Security Breach! Please close Developer Tools to view content.</h2>";
-    }
-  }, 1000);
- </script>
-
- <script>
-document.addEventListener("contextmenu", (e) => e.preventDefault());
-
-document.onkeydown = function(e) {
-  if (e.keyCode == 123) return false; // F12
-  if (e.ctrlKey && e.shiftKey && e.keyCode == 73) return false; // Ctrl+Shift+I
-  if (e.ctrlKey && e.keyCode == 85) return false; // Ctrl+U
-};
-</script>
     <!-- images show first after open index page -->
         <div id="imageOverlay" class="overlay">
     <div class="modal-content">
         <span class="close-btn" onclick="closeImage()">&times;</span>
-        <img class="ig67" src="images/1778057878852.png "  alt="Welcome Image">
+        <img class="ig67" src="images/file_00000000c07471fda4dcd1e0616fafe9.png "  alt="Welcome Image">
     </div>
 </div>
 <style> 
