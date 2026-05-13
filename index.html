@@ -4,7 +4,7 @@
   <meta name="google-site-verification" content="Jc7TpyvAcQM-fn3zCnF_feoaI1zeqhv4U-dw3ATXkRk" />
                  <meta name="author" content="deepak aggarwal/">
              <meta name="og:site_name" content="https://deepakag285-stack.github.io/College-1/"/>
-            <meta name="og:title" content="deepak web developer | deepak aggarwal | 8684899869"/>
+            <meta name="og:title" content="deepak web developer | deepak aggarwal | deepak aggarwal web developer| 8684899869"/>
             <meta name="og:description" content="from deepak aggarwal you can get more details about sites and get your sites today."/>
         <meta property="og:image" content="https://deepakag285-stack.github.io/College-1/images/IMG_20260511_175810 copy.jpg"/>
         <meta name="twitter:card" content="summary_large_image"/>
@@ -13,7 +13,7 @@
         <meta name="twitter:title" content="deepak web developer | deepak aggarwal | 8684899869"/>
         <meta name="twitter:description" content="from deepak aggarwal you can get more details about sites and get your sites today."/>
         <meta name="twitter:image" content="https://deepakag285-stack.github.io/College-1/images/IMG_20260511_175810 copy.jpg"/>
-        <meta name="keywords" content="deepak web developer, deepak aggarwal, 8684899869, deepak web developer contact, deepak web developer website, deepak web developer services, deepak web developer portfolio, deepak web developer projects, deepak web developer skills, deepak web developer experience, deepak web developer reviews, deepak web developer testimonials, deepak web developer pricing, deepak web developer availability, deepak web developer location, deepak web developer social media, deepak web developer blog, deepak web developer newsletter"/>
+        <meta name="keywords" content="deepak web developer, deepak aggarwal,aggarwal deepak web developer, 8684899869, deepak web developer contact, deepak web developer website, deepak web developer services,deepak coder, deepak web developer portfolio, deepak web developer projects, deepak web developer skills, deepak web developer experience, deepak web developer reviews, deepak web developer testimonials, deepak web developer pricing, deepak web developer availability, deepak web developer location, deepak web developer social media, deepak web developer blog, deepak web developer newsletter"/>
         <meta name="description" content="from deepak aggarwal you can get more details about sites and get your sites today.">
         <link rel="icon" type="image/x-icon" href="favicon.ico" sizes="256*256">
          <link rel="shortcut icon" href="favicon.ico" sizes="256*256">
@@ -40,8 +40,83 @@
   <body>
     <a href="https://forms.gle/uTncd54AyrotRoqq6"><button class="btn btn-success">take a survey<sup><img src="images/oM5kD4MuSqXjhdCiSh.gif"></sup></button></a>
  <hr>
-      <img class="pics" src="images/deep.png">
-     <style>
+                  <div class="slider-container">
+    <div class="slides">
+               <div class="slide active"><img src="images/deep.png" alt=""></div>
+      <div class="slide"><img src="images/frame0000.png" alt=""></div>
+     <div class="slide"><img src="images/file_00000000c07471fda4dcd1e0616fafe9.png" alt=""></div>
+        <div class="slide "><img class="ig2"src="images/IMG_20260110_134205.jpg" alt=""></div>
+         <div class="slide"><img class="ig2" src="images/IMG_20260513_192231.png" alt=""></div>
+     </div>   
+    <h1 class="prev" onclick="changeSlide(-1)">&#10094;</h1>
+    <h1 class="next" onclick="changeSlide(1)">&#10095;</h1>
+</div>
+    <style> 
+.slider-container {
+    position: relative;
+    max-width: 450px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.slide {
+    display: none; /* Hide images by default */
+    width: 100%;
+}
+.slide img {
+    width: 100%;
+     height: 400px;
+    display: block;
+    margin-left:0.2cm;
+}
+.active {
+    display: block; /* Show the active image */
+}
+
+/* Navigation Buttons */
+h1 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.next { right: 0; }
+.prev { left: 0; }
+
+h1:hover { background: rgba(0,0,0,0.8); 
+}
+</style>
+ <script> 
+ let currentIndex = 0;
+const slides = document.querySelectorAll('.slide');
+
+function changeSlide(direction) {
+    // 1. Remove 'active' class from current slide
+    slides[currentIndex].classList.remove('active');
+
+    // 2. Update the index
+    currentIndex += direction;
+
+    // 3. Handle Looping (if at end, go to start; if at start, go to end)
+    if (currentIndex >= slides.length) {
+        currentIndex = 0;
+    } else if (currentIndex < 0) {
+        currentIndex = slides.length - 1;
+    }
+
+    // 4. Add 'active' class to the new slide
+    slides[currentIndex].classList.add('active');
+}
+// Optional: Auto-play every 5 seconds
+setInterval(() => changeSlide(1), 2000);
+</script>
+
+      <style>
        .pics{
         height: 350px;
         width: 300px;
@@ -58,7 +133,7 @@
         <div id="imageOverlay" class="overlay">
     <div class="modal-content">
         <span class="close-btn" onclick="closeImage()">&times;</span>
-        <img class="ig67" src="images/file_00000000c07471fda4dcd1e0616fafe9.png "  alt="Welcome Image">
+        <img class="ig67" src="images/deep.png"  alt="Welcome Image">
     </div>
 </div>
 <style> 
@@ -79,7 +154,7 @@
     max-width: 100%;
 }
 .ig67{
-    height: 500px;
+    height: 400px;
     width: 280px;
     margin-left: 0.2cm;
 }
@@ -140,7 +215,7 @@ function closeImage() {
         </div>
          </div>
          <hr>
-         <img class="ig5" src="images/IMG_20260511_175810 copy.jpg">
+         <img class="ig5" src="images/IMG_20260511_175810.jpg">
         <hr>
                              <a href="hello.html"><button class="btn btn-danger"> Main Website </button></a> 
              <hr>
@@ -153,8 +228,7 @@ function closeImage() {
                            <a href="admitcard.html"><button class="btn btn-success">Admit Card/College helpline</button></a> 
 
             <hr>
-                 <img class="pics9" src="images/frame0000.png">
-   <div class="box1"> 
+    <div class="box1"> 
   <h6>Website developed by Deepak aggarwal<br><br>Search om google: deepak web developer</h6>
   <h6>Updated on 10 MAY-2026<br><p2>AT</p2><br><p3>02:03 AM</p3></h6>
      </div>
