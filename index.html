@@ -41,6 +41,41 @@
 
   </head>
   <body>
+    <script id='merchantWidgetScript' src="https://www.gstatic.com/shopping/merchant/merchantwidget.js" defer></script>
+
+<script>
+  merchantWidgetScript.addEventListener('load', function () {
+    merchantwidget.start({
+         // REQUIRED FIELDS
+         merchant_id: 5787170523,
+
+         // OPTIONAL FIELDS
+         position: POSITION,
+         region: REGION,
+    });
+  });
+</script>
+      <script src="https://apis.google.com/js/platform.js?onload=renderOptIn" async defer></script>
+
+<script>
+  window.renderOptIn = function() {
+    window.gapi.load('surveyoptin', function() {
+      window.gapi.surveyoptin.render(
+        {
+          // REQUIRED FIELDS
+          "merchant_id": 5787170523,
+          "order_id": "ORDER_ID",
+          "email": "CUSTOMER_EMAIL",
+          "delivery_country": "COUNTRY_CODE",
+          "estimated_delivery_date": "YYYY-MM-DD",
+
+          // OPTIONAL FIELDS
+          "products": [{"gtin":"GTIN1"}, {"gtin":"GTIN2"}]
+        });
+    });
+  }
+</script>
+
     <a href="https://forms.gle/uTncd54AyrotRoqq6"><button class="btn btn-success">take a survey<sup><img src="images/oM5kD4MuSqXjhdCiSh.gif" height="50" width="60"></sup></button></a>
  <hr>
                   <div class="slider-container">
