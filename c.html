@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Our Team - Careers</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Grid System */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        /* Card Styles */
+        .category-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .image-container {
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: #eef2ff;
+            color: #4f46e5;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-content h2 {
+            font-size: 1.4rem;
+            margin: 0 0 10px 0;
+            color: #111827;
+        }
+
+        .card-content p {
+            color: #4b5563;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        /* Button Style */
+        .view-jobs-btn {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            background: #4f46e5;
+            color: #ffffff;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            box-sizing: border-box;
+            transition: background 0.2s;
+        }
+
+        .view-jobs-btn:hover {
+            background: #4338ca;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Find Your Next Role</h1>
+            <p>Select a department to explore opportunities and see life at our company.</p>
+        </div>
+
+        <!-- Categories Grid -->
+        <div class="category-grid">
+
+            <!-- Category 1: Tech & Engineering -->
+            <div class="category-card">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Engineering and Tech Team Coding Together">
+                </div>
+                <div class="card-content">
+                    <span class="category-badge">Engineering</span>
+                    <h2>Technology & Engineering</h2>
+                    <p>Build the future with us. We use modern tech stacks, value clean code, and tackle complex problems in an agile environment.</p>
+                    <a href="#tech-jobs" class="view-jobs-btn">View Open Roles</a>
+                </div>
+            </div>
+
+            <!-- Category 2: Marketing & Creative -->
+            <div class="category-card">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=600&q=80" alt="Creative Team Brainstorming with Sticky Notes">
+                </div>
+                <div class="card-content">
+                    <span class="category-badge">Creative</span>
+                    <h2>Marketing & Design</h2>
+                    <p>Shape our brand voice and visual identity. Join a vibrant team of fast-paced storytellers, UI/UX experts, and growth hackers.</p>
+                    <a href="#creative-jobs" class="view-jobs-btn">View Open Roles</a>
+                </div>
+            </div>
+
+            <!-- Category 3: Sales & Success -->
+            <div class="category-card">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80" alt="Sales Professional Smiling on Call">
+                </div>
+                <div class="card-content">
+                    <span class="category-badge">Growth</span>
+                    <h2>Sales & Customer Success</h2>
+                    <p>Connect with people and drive real impact. We are looking for empathetic communicators ready to help our clients win.</p>
+                    <a href="#sales-jobs" class="view-jobs-btn">View Open Roles</a>
+                </div>
+            </div>
+
+            <!-- Category 4: Operations & HR -->
+            <div class="category-card">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=80" alt="Business Operations Team Meeting">
+                </div>
+                <div class="card-content">
+                    <span class="category-badge">Operations</span>
+                    <h2>People, Finance & Ops</h2>
+                    <p>The backbone of our company. Help us streamline processes, manage scale, and cultivate an award-winning inclusive culture.</p>
+                    <a href="#ops-jobs" class="view-jobs-btn">View Open Roles</a>
+                </div>
+            </div>
+
+            <!-- Category 5: Remote / Hybrid -->
+            <div class="category-card">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=600&q=80" alt="Bright Home Office Workspace Setup">
+                </div>
+                <div class="card-content">
+                    <span class="category-badge">Flexible</span>
+                    <h2>Remote & Hybrid Roles</h2>
+                    <p>Work from anywhere. We provide the tools, autonomy, and flexible schedules required to do your best work where you feel comfortable.</p>
+                    <a href="#remote-jobs" class="view-jobs-btn">View Open Roles</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
+
