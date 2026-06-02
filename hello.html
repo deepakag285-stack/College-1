@@ -134,6 +134,11 @@ document.onkeydown = function(e) {
         height: 60px;
         width: 60px;
      }
+     .image{
+        height: 300px;
+        width: 300px;
+        margin: 10px;
+     }
 </style>
             <br>
     <a href="index.html"><button class=" btn btn-success">BACK</button></a>
@@ -146,9 +151,9 @@ document.onkeydown = function(e) {
                         <ul class="nav nav-tabs">    
                                     <img class="ig" src="images/IMG_20260110_134205.jpg">
             <li class="col-3" class="nav-item"><a class="nav-link " href="#home" data-bs-toggle="tab">home</a></li>
-          <li class="col-3" class="nav-item"><a class="nav-link" href="#service" data-bs-toggle="tab">Services</a></li>
+          <li class="col-3" class="nav-item"><a class="nav-link" href="#images" data-bs-toggle="tab">images</a></li>
         <li class="col-3" class="nav-item"><a class="nav-link" href="#news" data-bs-toggle="tab">News/blog</a></li>
-             </ul>
+              </ul>
   </div>
 </div>
 </div>
@@ -170,60 +175,215 @@ document.onkeydown = function(e) {
         </div>
         </div>
                         <hr>
-                        <p>------------------------------------------</p>
-<h8>█▓▒▒░░░"Digital work isn't just about efficiency; it's about expanding our potential and reimagining what's possible in an interconnected world."░░░▒▒▓██▓▒▒░░░</h8>
-   <p>------------------------------------------</p>
-   <br>
+                        <style> 
+                                :root {
+            --bg-color: #f4f7f6;
+            --text-color: #333;
+            --college-color: #4a90e2;
+            --school-color: #e67e22;
+            --env-color: #2ecc71;
+            --exam-color: #9b59b6;
+        }
+
+         h1 {
+            margin-bottom: 30px;
+            font-weight: 600;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        /* Responsive Grid Layout */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        /* Card Styling */
+        .card {
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Top border accent for each category */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+        }
+
+        .card.college::before { background-color: var(--college-color); }
+        .card.school::before { background-color: var(--school-color); }
+        .card.environment::before { background-color: var(--env-color); }
+        .card.exams::before { background-color: var(--exam-color); }
+
+        .card-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .college .card-tag { color: var(--college-color); }
+        .school .card-tag { color: var(--school-color); }
+        .environment .card-tag { color: var(--env-color); }
+        .exams .card-tag { color: var(--exam-color); }
+
+        .card-title {
+            font-size: 1.4rem;
+            margin: 0 0 15px 0;
+            color: #2c3e50;
+        }
+
+        .card-quote {
+            font-style: italic;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .card-footer {
+            font-size: 0.85rem;
+            color: #888;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+    </style>
+ 
+    <h1>Your Daily Dose of Inspiration</h1>
+
+    <div class="card-container" id="motivation-grid">
+        </div>
+
+    <script>
+        // Data structure containing the card info and potential quotes
+        const cardData = [
+            {
+                type: 'college',
+                tag: 'College Life',
+                title: 'Building Your Future',
+                quotes: [
+                    "Your education is a dress rehearsal for a life that is yours to lead. Make it chaotic, beautiful, and uniquely yours.",
+                    "College is more than just classes; it’s where you discover who you are and build the foundation for your wildest dreams."
+                ],
+                footer: "💡 Network, learn, and grow."
+            },
+            {
+                type: 'school',
+                tag: 'School Days',
+                title: 'The Spark of Curiosity',
+                quotes: [
+                    "Every great architect, scientist, and leader sat exactly where you are sitting today. Believe in your potential.",
+                    "Don't worry about being perfect; just focus on being a little better than you were yesterday. Curiosity is your superpower!"
+                ],
+                footer: "🌱 Every day is a fresh start."
+            },
+            {
+                type: 'environment',
+                tag: 'Our Planet',
+                title: 'Be the Change',
+                quotes: [
+                    "The Earth does not belong to us; we belong to the Earth. Small acts of care multiplied by millions can transform the world.",
+                    "Plant seeds of kindness for the planet today, so future generations can sit under the shade of our good choices."
+                ],
+                footer: "🌍 Reduce, reuse, inspire."
+            },
+            {
+                type: 'exams',
+                tag: 'Exam Strategy',
+                title: 'A Chance to Shine',
+                quotes: [
+                    "Exams aren't a trap to catch what you don't know; they are a stage for you to showcase how much you've grown. Breathe, you got this.",
+                    "An exam is just a snapshot of a single moment in time. It cannot measure your worth, your passion, or your ultimate potential."
+                ],
+                footer: "✨ Preparation meets opportunity."
+            }
+        ];
+
+        function generateCards() {
+            const container = document.getElementById('motivation-grid');
+            
+            cardData.forEach(data => {
+                // Pick a random quote from the array for variety
+                const randomQuote = data.quotes[Math.floor(Math.random() * data.quotes.length)];
+                
+                // Create card element
+                const card = document.createElement('div');
+                card.className = `card ${data.type}`;
+                
+                card.innerHTML = `
+                    <div>
+                        <div class="card-tag">${data.tag}</div>
+                        <h2 class="card-title">${data.title}</h2>
+                        <p class="card-quote">"${randomQuote}"</p>
+                    </div>
+                    <div class="card-footer">${data.footer}</div>
+                `;
+                
+                container.appendChild(card);
+            });
+        }
+
+        // Run the function when the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', generateCards);
+    </script>
+    <br>
+    <marquee behavior="scroll" direction="left" scrollamount="5" style="color: darkblue; font-size: 1.2rem; font-weight: bold;">
+        within 2 hrs your problems will solve
+        </marquee>
    <div class="box"> 
          <h3 class="ab"><img class="ig-9" src="images/1768416755323.png">ABOUT</h3>
               This website is very helpful for school and college ,one can see pyq,notes etc,and can raise doubt
          </div>
-         <div class="box-1">
-              <h3 class="abc"><img class="ig-9" src="images/1768416755323.png">Raise Doubt</h3>
-              <a href="https://docs.google.com/document/d/14915AYI9LfXo-zfMkpEm0IyXjyQQ2y8dahMrsdKTRq0/edit?usp=drivesdk">click this</a>
-              One can write own problem and problem will solve within 24 hrs
-              by descriptive method without any hesiatation
-         </div>
-         <br>
-         <img class="ig-3" src="images/1505855675-wd-motivationquotes-0014-15.avif">
-         <br>
-         <img class="ig-3" src="images/stock-vector-human-values-refer-to-those-values-which-are-at-the-core-of-being-human-mind-map-concept-background-2268954027.jpg">
+         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.7510582504924!2d75.81582027529866!3d28.577237175695053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3912f98c05974ac7%3A0x93874c2fb4da5af9!2saggarwal%20deepak%20web%20developer!5e0!3m2!1sen!2sin!4v1780430977285!5m2!1sen!2sin" width="350" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+  <div id="images" class="tab-pane fade">
+         <img class="image" src="images/frame0000.png">
+    <img class="image" src="images/file_000000006a3c7208af407b1a87e4ab31.png">
+    <img class="image" src="images/1780194854830.png">
+    <img class="image" src="images/1780194575091.png">
+     <img class="image"src="images/IMG_20260511_175810 copy.jpg">
+         <img class="image"src="images/IMG_20260601_162312.png" >   
+            <img class="image" src="images/WhatsApp Image 2026-05-23 at 21.48.13.jpeg" > 
+          <img class="image" src="images/WhatsApp Image 2026-05-23 at 22.01.58.jpeg" >  
+         <img class="image" src="images/IMG_20260513_192231.png">  
+          <img class="image" src="         images/WhatsApp Image 2026-05-23 at 23.12.38.jpeg" >
+                        <img  class="image" src="images/WhatsApp Image 2026-05-23 at 23.04.16.jpeg"  >
+                             <img class="image" src="images/WhatsApp Image 2026-05-23 at 22.01.59.jpeg">  
+                                   <img class="image" src="images/WhatsApp Image 2026-05-23 at 22.08.14.jpeg" > 
+                                                <img class="image" src="images/WhatsApp Image 2026-05-23 at 23.06.29.jpeg" > 
+                                                <img class="image" src="images/de.jpeg" >
+                                                      <img class="image" src="images/WhatsApp Image 2026-05-24 at 13.02.35.jpeg"  >
+                                                 <img class="image" src="images/IMG-20260524-WA0003.jpg" >
+                                                 <img class="image" src="images/1780194684534.png">
+       <img class="image" src="images/1779814341413.png">
+      <img class="image" src="images/1779974173446.png" >
+       <img class="image" src="images/IMG20260528170314.jpg">  
+      <img class="image" src="images/1780194342263.png" > 
+       <img class="image" src="images/1780412828703.png"> 
+
  </div>
-                 <div id="service" class="tab-pane fade in">
-                    <div class="card">
-                        <div class="card-header"> 
-                        <h8 class="cl">We provide best service following services are given below </h4>
-                            </div>
-                            <div class="card-img">
-                                <img class=" ig-99"src="images/adhar card.webp">
-                                <h3 class="ad">ADHAR UPDATE</h3>
-                            </div>
-                            <div class="card-img">
-                                <img class="ig-99" src="images/web develppment.png">
-                                <h3 class="ad">Web developer</h3>
-                            </div>
-                                                        <div class="card-img">
-                                <img class=" ig-99"src="images/coding.jpg">
-                                <h3 class="ad">Writ Code (c++,java,javascript,html)</h3>
-                            </div>
-                            <div class="card-img">
-                                <img class="ig-99" src="images/ms office.jpg">
-                                <h3 class="ad">MS-Office access</h3>
-                            </div>
-                            <div class="card-img">
-                                <img class=" ig-99"src="images/office assistant.jpg">
-                                <h3 class="ad">Office assiatance</h3>
-                            </div>
-                            <div class="card-img">
-                                <img class="ig-99" src="">
-                                <h3 class="ad"></h3>
-                            </div>
-
-
-                    </div>
-                      </div>
-
-                 <div id="news" class="tab-pane fade in">
+                    <div id="news" class="tab-pane fade in">
       <div class="card">
          <div class="card-header">
            <h8> Educational Technology and Mobile Learning</h8> 
@@ -254,7 +414,7 @@ document.onkeydown = function(e) {
   </div>
     <style>
         body{
-            background-color: floralwhite;
+            background-color: red;
             margin-top:0.5cm;
         margin-left: 0.5cm;
         margin-right: 0.5cm;
