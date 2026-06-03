@@ -224,10 +224,11 @@ function closePopup(){
 
                    <div class="slider-container">
     <div class="slides">
-              
-      <div class="slide active"><img class="ig2" src="images/frame0000.png" alt="Slide 1"></div>
+       <div class="slide active"><img class="ig2" src="images/Gemini_Generated_Image_wzw4gfwzw4gfwzw4.png" alt="Slide 1"></div>
+       <div class="slide"><img class="ig2" src="images/Gemini_Generated_Image_aszlrfaszlrfaszl.png" alt="Slide 2"></div>
    <div class="slide"><img class="ig2" src="images/file_000000006a3c7208af407b1a87e4ab31.png" alt="Slide 2"></div>
      <div class="slide"><img class="ig2"src="images/IMG_20260511_175810 copy.jpg" alt="Slide 3"></div>
+     <div class="slide"><img class="ig2" src="images/Gemini_Generated_Image_s4zxxos4zxxos4zx.png" alt="Slide 4"></div>
         <div class="slide"><img class="ig2"src="images/IMG_20260601_162312.png"   alt="Slide 4"></div>
            <div class="slide"><img class="ig2" src="images/WhatsApp Image 2026-05-23 at 21.48.13.jpeg" alt="Slide 5"></div>
          <div class="slide"><img class="ig2"src=" images/WhatsApp Image 2026-05-23 at 22.01.58.jpeg"   alt="Slide 6"></div>
@@ -249,6 +250,7 @@ function closePopup(){
          <div class="slide"><img class="ig2" src="images/1780194684534.png" alt="Slide 22"></div>
            <div class="slide"><img class="ig2" src="images/1780194575091.png" alt="Slide 23"></div>
               <div class="slide"><img class="ig2" src="images/deep.png" alt="Slide 24"></div>
+              <div class="slide"><img class="ig2" src="images/frame0000.png" alt="Slide 25"></div>
 
       </div>   
     <h1 class="prev" onclick="changeSlide(-1)">&#10094;</h1>
@@ -332,13 +334,14 @@ setInterval(() => changeSlide(1), 2000);
 
     </style>  
 
-    <!-- images show first after open index page -->
+    <!-- images show first after open index page 
      <div id="imageOverlay" class="overlay">
     <div class="modal-content">
         <span class="close-btn" onclick="closeImage()">&times;</span>
         <img class="ig67" src="images/IMG-20260524-WA0003.jpg"  alt="Welcome Image">
     </div>
 </div>
+-->
  <style> 
 .overlay {
     position: fixed;
@@ -556,7 +559,7 @@ function closeImage() {
                <hr>
                       <div class="card">
             <div class="card-img">
-                <img src="images/IMG_20260515_000015.png" alt="Card Image">
+                <img src="images/Gemini_Generated_Image_9vd77s9vd77s9vd7.png" alt="Card Image">
                 </div>
                 <div class="card-footer">
                               <a href="college.html"><button class="btn btn-warning"> College Section </button></a> 
@@ -576,7 +579,7 @@ function closeImage() {
                <hr>
                       <div class="card">
             <div class="card-img">
-                <img src="images/1778781854410.png" alt="Card Image">
+                <img src="images/Gemini_Generated_Image_s4zxxos4zxxos4zx.png" alt="Card Image">
                 </div>
                 <div class="card-footer">
                             <a href="admitcard.html"><button class="btn btn-success">Admit Card/College helpline</button></a> 
@@ -591,10 +594,186 @@ function closeImage() {
                             <a href="csc.html"><button class="btn btn-success">CSC FACILITY</button></a> 
                 </div>
             </div>
+            <hr>
+             <style> 
+        .card-1 {
+            background: linear-gradient(135deg, #ff007f, #ff758c);
+            height: 400px;
+        }
+
+        .card-2 {
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+                        height: 400px;
+
+        }
+
+ 
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .card-text {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+
+        /* --- Modal/Popup Styles --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+            z-index: 1000;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-box {
+            background: white;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 20px;
+            padding: 30px;
+            position: relative;
+            transform: scale(0.7);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            color: #333;
+        }
+
+        .modal-overlay.active .modal-box {
+            transform: scale(1);
+        }
+
+        .modal-title {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #111;
+        }
+
+        .modal-desc {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* --- Animated X Close Button --- */
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            background: #333;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        /* Dynamic background color matching the active card color on hover */
+        .close-btn:hover {
+            transform: rotate(180deg);
+            background: #ff007f; /* Fallback/Default dynamic target */
+        }
+
+        /* Creating the X lines */
+        .close-btn::before, .close-btn::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 3px;
+            background-color: white;
+            border-radius: 2px;
+        }
+
+        .close-btn::before {
+            transform: rotate(45deg);
+        }
+
+        .close-btn::after {
+            transform: rotate(-45deg);
+        }
+    </style>
+
+    <div class="card card-1" onclick="openModal('An internship is your canvas to turn classroom theory into real-world impact. It is not just about logging hours or completing tasks; it is about building your professional identity, embracing curiosity, and learning from every mistake. Approach every challenge as an opportunity to grow, because the dedication and resilience you show today are the exact building blocks of your success tomorrow..', '#ff007f')">
+        <img src="images/Gemini_Generated_Image_x8n2fjx8n2fjx8n2.png" alt="Neon Paradise" class="card-img">
+        <div class="card-body">
+            <h2 class="card-title"> click here to know about intership</h2>
+            <p class="card-text">Click to intership</p>
+        </div>
+    </div>
+<hr>
+    <div class="card card-2" onclick="openModal('website is very eesential in our life,because in modern days most of people use website to get their work online', '#0072ff')">
+        <img src="images/Gemini_Generated_Image_wzw4gfwzw4gfwzw4.png" alt="Deep Ocean" class="card-img">
+        <div class="card-body">
+            <h2 class="card-title">click here to know about website</h2>
+            <p class="card-text">Click to website.</p>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+        <div class="modal-box" onclick="event.stopPropagation()">
+            <div class="close-btn" id="modalCloseBtn" onclick="closeModal(null)"></div>
+            <h2 class="modal-title" id="modalTitle">Title</h2>
+            <p class="modal-desc" id="modalDesc">Detailed content goes here...</p>
+        </div>
+    </div>
+
+    <script>
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDesc = document.getElementById('modalDesc');
+        const modalCloseBtn = document.getElementById('modalCloseBtn');
+
+        // Function to open the modal with dynamic content
+        function openModal(title, description, themeColor) {
+            modalTitle.innerText = title;
+            modalDesc.innerText = description;
+            
+            // Set the close button hover color to match the clicked box theme
+            modalCloseBtn.style.setProperty('--hover-color', themeColor);
+            
+            // Apply specific hover style via JS dynamically
+            modalCloseBtn.onmouseenter = () => modalCloseBtn.style.backgroundColor = themeColor;
+            modalCloseBtn.onmouseleave = () => modalCloseBtn.style.backgroundColor = '#333';
+
+            modalOverlay.classList.add('active');
+        }
+
+        // Function to close the modal
+        function closeModal(event) {
+            // If event exists, ensure it only triggers when clicking the overlay background
+            if (event && event.target !== modalOverlay) return;
+            
+            modalOverlay.classList.remove('active');
+        }
+    </script>
 
        <div class="box1"> 
   <h6>Website developed by Deepak aggarwal</h6>
-   <h6>LAST Updated : 02-06-2026  22:42 PM</h6>
+   <h6>LAST Updated : 03-06-2026  18:20 PM</h6>
      </div>
  
     <style>
