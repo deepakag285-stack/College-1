@@ -112,7 +112,372 @@
             createFlower(i);
         }
     </script>
+    <style>
+.heading-container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
+        .heading-container h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #38bdf8, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .heading-container p {
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+
+        /* Marquee Slider Container */
+        .slider-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.03);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .slider-track {
+            display: flex;
+            width: max-content;
+            animation: scrollMarquee 35s linear infinite;
+        }
+
+        /* Pause animation on hover or when class is injected */
+        .slider-container:hover .slider-track,
+        .slider-track.paused {
+            animation-play-state: paused;
+        }
+
+        @keyframes scrollMarquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); } /* Halfway because elements are duplicated */
+        }
+
+        /* Card Styles */
+        .custom-card {
+            width: 320px;
+            background: #1e293b;
+            border-radius: 20px;
+            margin: 0 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .custom-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Dynamic Theme Palette Rules */
+        .custom-card.pvc-theme { --theme-color: #38bdf8; --bg-gradient: linear-gradient(135deg, #0284c7, #38bdf8); }
+        .custom-card.link-theme { --theme-color: #f43f5e; --bg-gradient: linear-gradient(135deg, #e11d48, #f43f5e); }
+        .custom-card.college-theme { --theme-color: #10b981; --bg-gradient: linear-gradient(135deg, #059669, #10b981); }
+        .custom-card.cert-theme { --theme-color: #f59e0b; --bg-gradient: linear-gradient(135deg, #d97706, #f59e0b); }
+        .custom-card.f-update-theme { --theme-color: #a855f7; --bg-gradient: linear-gradient(135deg, #9333ea, #a855f7); }
+        .custom-card.f-gen-theme { --theme-color: #06b6d4; --bg-gradient: linear-gradient(135deg, #0891b2, #06b6d4); }
+        .custom-card.pan-theme { --theme-color: #ec4899; --bg-gradient: linear-gradient(135deg, #db2777, #ec4899); }
+        .custom-card.web-theme { --theme-color: #6366f1; --bg-gradient: linear-gradient(135deg, #4f46e5, #6366f1); }
+
+        .custom-card-body {
+            padding: 25px 20px;
+            text-align: center;
+            background: var(--bg-gradient);
+            position: relative;
+        }
+
+        .custom-card-body h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .custom-card-img {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            background: #0f172a;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .custom-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .custom-card:hover .custom-card-img img {
+            transform: scale(1.1);
+        }
+
+        .custom-card-footer {
+            padding: 25px 20px;
+            background: #1e293b;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            margin-top: auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .price-tag {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--theme-color);
+            background: rgba(255, 255, 255, 0.03);
+            padding: 6px 16px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Custom pricing list logic specifically for websites */
+        .price-list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            background: rgba(0,0,0,0.2);
+            padding: 10px;
+            border-radius: 12px;
+        }
+        .price-list-item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 3px;
+        }
+        .price-list-item:last-child { border: none; }
+
+        .whatsapp-btn {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 20px;
+            background: #25D366;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(18, 140, 126, 0.5);
+        }
+
+        /* Instructional Banner */
+        .info-tag {
+            margin-top: 25px;
+            font-size: 0.85rem;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="heading-container">
+        <h2>Our Digital & Documentation Services</h2>
+     </div>
+
+    <!-- Main Container -->
+    <div class="slider-container" id="marqueeSlider">
+        <div class="slider-track" id="sliderTrack">
+            
+            <!-- CARD 1: PVC Card -->
+            <div class="custom-card pvc-theme">
+                <div class="custom-card-body">
+                    <h4>Get PVC Card</h4>
+                </div>
+                <div class="custom-card-img">
+                    <img src="images/WhatsApp Image 2026-05-23 at 22.45.38.jpeg" alt="PVC Card">
+                </div>
+                <div class="custom-card-footer">
+                    <div class="price-tag">₹150 Only</div>
+                    <a href="https://wa.me/918684899861?text=Hello,%20I%20want%20to%20order%20a%20PVC%20Card." target="_blank" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> Order Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 2: Aadhaar-PAN Link -->
+            <div class="custom-card link-theme">
+                <div class="custom-card-body">
+                    <h4>Aadhaar-PAN Link</h4>
+                </div>
+                <div class="custom-card-img">
+                    <img src="images/WhatsApp Image 2026-05-23 at 22.08.14.jpeg" alt="Aadhaar-PAN Link">
+                </div>
+                <div class="custom-card-footer">
+                    <div class="price-tag">₹2,000 Only</div>
+                    <a href="https://wa.me/918684899861?text=Hello,%20I%20need%20help%20with%20Aadhaar-PAN%20Linking." target="_blank" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> Order Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 3: College Admission Form -->
+            <div class="custom-card college-theme">
+                <div class="custom-card-body">
+                    <h4>College Admission Form</h4>
+                </div>
+                <div class="custom-card-img">
+                    <img src="images/WhatsApp Image 2026-05-23 at 22.01.59.jpeg" alt="College Admission Form">
+                </div>
+                <div class="custom-card-footer">
+                    <div class="price-tag">₹250 Only</div>
+                    <a href="https://wa.me/918684899861?text=Hello,%20I%20want%20to%20fill%20a%20College%20Admission%20Form." target="_blank" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> Order Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 4: Domicile/Income Certificate -->
+            <div class="custom-card cert-theme">
+                <div class="custom-card-body">
+                    <h4>Domicile / Income</h4>
+                </div>
+                <div class="custom-card-img">
+                    <img src="images/WhatsApp Image 2026-05-23 at 23.04.16.jpeg" alt="Certificates">
+                </div>
+                <div class="custom-card-footer">
+                    <div class="price-tag">₹200 Only</div>
+                    <a href="https://wa.me/918684899861?text=Hello,%20I%20apply%20for%20Domicile/Income%20Certificate." target="_blank" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> Order Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 5: Family ID Update -->
+            <div class="custom-card f-update-theme">
+                <div class="custom-card-body">
+                    <h4>Family ID Update</h4>
+                </div>
+                <div class="custom-card-img">
+                    <img src="images/WhatsApp Image 2026-05-23 at 23.06.29.jpeg" alt="Family ID Update">
+                </div>
+                <div class="custom-card-footer">
+                    <div class="price-tag">₹100 Only</div>
+                    <a href="https://wa.me/918684899861?text=Hello,%20I%20want%20to%20update%20my%20Family%20ID." target="_blank" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> Order Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 6: Generate Family ID -->
+            <div class="custom-card f-gen-theme">
+                <div class="custom-card-body">
+                    <h4>Generate Family ID</h4>
+                </div>
+                <div class="custom-card-img">
+                    <img src="images/WhatsApp Image 2026-05-24 at 13.02.35.jpeg" alt="Generate Family ID">
+                </div>
+                <div class="custom-card-footer">
+                    <div class="price-tag">₹150 Only</div>
+                    <a href="https://wa.me/918684899861?text=Hello,%20I%20want%20to%20generate%20a%20new%20Family%20ID." target="_blank" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> Order Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 7: PAN Card Apply -->
+            <div class="custom-card pan-theme">
+                <div class="custom-card-body">
+                    <h4>PAN Card Apply</h4>
+                </div>
+                <div class="custom-card-img">
+                    <img src="images/de.jpeg" alt="PAN Card Application">
+                </div>
+                <div class="custom-card-footer">
+                    <div class="price-tag">₹2,000 Only</div>
+                    <a href="https://wa.me/918684899861?text=Hello,%20I%20want%20to%20apply%20for%20a%20new%20PAN%20Card." target="_blank" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> Order Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 8: Website Plans -->
+            <div class="custom-card web-theme">
+                <div class="custom-card-body">
+                    <h4>Get Your Website</h4>
+                </div>
+                <div class="custom-card-img">
+                    <img src="images/WhatsApp Image 2026-05-23 at 23.12.38.jpeg" alt="Website Development">
+                </div>
+                <div class="custom-card-footer">
+                    <div class="price-list">
+                        <div class="price-list-item"><span>1 Year:</span><strong>₹20,000</strong></div>
+                        <div class="price-list-item"><span>6 Months:</span><strong>₹10,000</strong></div>
+                        <div class="price-list-item"><span>1 Month:</span><strong>₹2,000</strong></div>
+                    </div>
+                    <a href="https://wa.me/918684899861?text=Hello,%20I%20am%20interested%20in%20your%20Website%20Packages." target="_blank" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> Order Now
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="info-tag">
+        <i class="fas fa-info-circle"></i> Click and hold cards or tap them to halt scrolling.
+    </div>
+
+    <!-- JavaScript to Handle Infinite Infinite Loop and Toggle Interaction -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const track = document.getElementById("sliderTrack");
+            
+            // Duplicate the cards dynamically to create a flawless infinite horizontal loop
+            const originalCards = track.innerHTML;
+            track.innerHTML = originalCards + originalCards;
+
+            // Interactive feature: Click to pause/play behavior toggle
+            let isClickPaused = false;
+            
+            track.addEventListener("click", (e) => {
+                // Prevent pause trigger if clicking directly on the WhatsApp action button link
+                if (e.target.closest('.whatsapp-btn')) return;
+
+                isClickPaused = !isClickPaused;
+                if (isClickPaused) {
+                    track.classList.add("paused");
+                } else {
+                    track.classList.remove("paused");
+                }
+            });
+        });
+    </script>
     <!-- Popup Modal -->
 <div id="surveyPopup" class="popup-overlay">
   <div class="popup-box">
