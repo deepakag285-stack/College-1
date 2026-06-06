@@ -4,8 +4,8 @@
   "description": "The personal website of Deepak Aggarwal, a web developer.",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme-color": "#317EFB",
+  "background_color": "green",
+  "theme_color": "#317EFB",
   "icons": [
     {
       "src": "favicon.ico",
