@@ -22,6 +22,7 @@
         <link rel="shortcut icon" href="https://deepakag285-stack.github.io/College-1/favicon.ico" type="image/x-icon">
         <link rel="canonical" href="https://deepakag285-stack.github.io/College-1/">
         <link rel="apple-touch-icon" href="https://deepakag285-stack.github.io/College-1/favicon.ico" sizes="180x180">
+        <link rel="manifest" href="manifest.json">
           <title>web developer-deepak aggarwal  </title>
          <script type="application/ld+json" class="yoast-schema-graph">
          {
@@ -1270,5 +1271,15 @@ function closeImage() {
        border-radius: 5cm;
     }
     </style>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                // GitHub Pages के पाथ की समस्या से बचने के लिए './sw.js' लिखा है
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('Service Worker Successfully Registered!', reg))
+                    .catch(err => console.error('Service Worker Registration Failed:', err));
+            });
+        }
+    </script>
     </body>
 </html>
