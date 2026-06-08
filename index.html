@@ -49,9 +49,28 @@
     <link rel="">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-     </head>
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "ddeb0025-fb06-431c-9ea9-e1554575540d",
+      allowLocalhostAsSecureOrigin: true,
+      serviceWorkerPath: "College-1/OneSignalSDKWorker.js",
+      path: "College-1/"
+    });
+  });
+</script>
+    </head>
   <body>
-        <div class="embedsocial-hashtag" data-ref="b42721dc605d0a019ce58fde92601dc51e3cedf1"> <a class="feed-powered-by-es feed-powered-by-es-feed-img es-widget-branding" href="https://embedsocial.com/google-reviews-widget/" target="_blank" title="Embed Google reviews" > <img src="https://embedsocial.com/cdn/icon/embedsocial-logo.webp" alt="EmbedSocial"> <div class="es-widget-branding-text">Embed Google reviews</div> </a> </div> <script> (function(d, s, id) { var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/cdn/ht.js"; d.getElementsByTagName("head")[0].appendChild(js); }(document, "script", "EmbedSocialHashtagScript")); </script>
+    <button onclick="OneSignal.push(['registerForPushNotifications'])" class="btn btn-primary m-3"></button>
+    <button onclick="OneSignal.push(['setSubscription', false])" class="btn btn-danger m-3"></button>
+    <button onclick="OneSignal.push(['setSubscription', true])" class="btn btn-success m-3"></button>
+    <button onclick="OneSignal.push(['getUserId', function(userId) { console.log('OneSignal User ID:', userId); }])" class="btn btn-info m-3"></button>
+    <button onclick="OneSignal.push(['getSubscription', function(isSubscribed) { console.log('OneSignal Subscription Status:', isSubscribed); }])" class="btn btn-warning m-3"></button>
+    <button onclick="OneSignal.push(['getPermissionSubscriptionState', function(state) { console.log('OneSignal Permission Subscription State:', state); }])" class="btn btn-secondary m-3"></button>
+    <button onclick="OneSignalDeferred.push(function(OneSignal) { OneSignal.showNativePrompt(); });">subscribe</button>
+         <div class="embedsocial-hashtag" data-ref="b42721dc605d0a019ce58fde92601dc51e3cedf1"> <a class="feed-powered-by-es feed-powered-by-es-feed-img es-widget-branding" href="https://embedsocial.com/google-reviews-widget/" target="_blank" title="Embed Google reviews" > <img src="https://embedsocial.com/cdn/icon/embedsocial-logo.webp" alt="EmbedSocial"> <div class="es-widget-branding-text">Embed Google reviews</div> </a> </div> <script> (function(d, s, id) { var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/cdn/ht.js"; d.getElementsByTagName("head")[0].appendChild(js); }(document, "script", "EmbedSocialHashtagScript")); </script>
        <style>
          .flower {
             position: fixed; 
