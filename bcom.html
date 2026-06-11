@@ -66,6 +66,70 @@ for (let x = -500; x < canvas.width; x += 300) {
         <h2>BACHLER OF Commerce(Bcom)</h2>
     </marquee>
 <hr>
+                            <style>
+         .colorful-select {
+            appearance: none; /* Removes default browser styling */
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            width: 280px;
+            box-shadow: 0 4px 15px rgba(255, 75, 43, 0.4);
+            transition: all 0.3s ease;
+            text-align: center;
+            outline: none;
+        }
+
+        /* Hover effect for the dropdown button */
+        .colorful-select:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 75, 43, 0.6);
+            background: linear-gradient(45deg, #ff4b2b, #ff416c);
+        }
+
+        /* Dropdown options list container styling */
+        .colorful-select option {
+            background-color: #2b1055;
+            color: #ffffff;
+            font-weight: normal;
+            padding: 10px;
+        }
+    </style>
+ 
+    <div class="container">
+         <!-- The Colorful Dropdown Menu -->
+        <select class="colorful-select" id="linkDropdown" onchange="openNewLink()">
+            <option value="" disabled selected>select class..</option>
+             <option value="bsc.html">Bachler of science(BSC)</option>
+            <option value="ba.html">Bachler Of Arts(BA)</option>
+            <option value="bca.html">Bachler Of Computer Application(BCA)</option>
+             <option value="bba">Bachler of Business Admini.(Bba)</option> 
+        </select>
+    </div>
+
+    <script>
+        function openNewLink() {
+            const dropdown = document.getElementById("linkDropdown");
+            const selectedValue = dropdown.value;
+
+            if (selectedValue) {
+                // Opens link in a new tab
+                window.open(selectedValue, '_blank');
+                
+                // Resets the dropdown back to the "Select an Option..." title
+                dropdown.selectedIndex = 0;
+            }
+        }
+    </script>
+
+<!--
                              <button class="tabs dropdown"> 
                                 <a href="" class="tabs-link dropdown-toggle" data-bs-toggle="dropdown">Select Class</a>
                              <div class="dropdown-menu">
@@ -77,6 +141,7 @@ for (let x = -500; x < canvas.width; x += 300) {
 
 
                              </div></button>
+                            -->
 
  <hr>
                       <h2 class="hyu">OLD QUESTION PAPER</h2>
