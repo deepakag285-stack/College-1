@@ -1297,18 +1297,12 @@ function closeImage() {
 
 async function checkForUpdates() {
   try {
-    fetch('data.json', { cache: 'no-cache' })
-  .then(response => response.json())
-  .then(data => {
-    // Ab aapko hamesha fresh data milega
-  });
-
-   // const response = await fetch('data.json');
-   // const data = await response.json();
+    const response = await fetch('/data.json');
+    const data = await response.json();
 
     // Check karein kya nayi body purani body se alag hai?
     if (data.body !== lastKnownBody) {
-      showNotif(data.title, data.body,data.image);
+      showNotif(data.title, data.body);
       
       // Ab nayi body ko save kar lo taake agli baar compare ho sake
       lastKnownBody = data.body;
@@ -1331,14 +1325,7 @@ async function checkForUpdates() {
     
     // Page load hote hi pehli baar check karein
     checkForUpdates();
-    registration.showNotification(data.title, {
-  body: data.body,
-  icon: 'favicon.ico',
-  image: 'images/1780194342263.png',
-   requireInteraction: true
-  // actions array hata diya
-});
-
+ 
   </script>
 
     </body>
