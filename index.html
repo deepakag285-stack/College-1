@@ -1297,8 +1297,14 @@ function closeImage() {
 
 async function checkForUpdates() {
   try {
-    const response = await fetch('data.json');
-    const data = await response.json();
+    fetch('data.json', { cache: 'no-cache' })
+  .then(response => response.json())
+  .then(data => {
+    // Ab aapko hamesha fresh data milega
+  });
+
+   // const response = await fetch('data.json');
+   // const data = await response.json();
 
     // Check karein kya nayi body purani body se alag hai?
     if (data.body !== lastKnownBody) {
@@ -1312,7 +1318,7 @@ async function checkForUpdates() {
   }
 }
 
-    function showNotif(title, body,image) {
+    function showNotif(title, body) {
       if (Notification.permission === 'granted') {
         navigator.serviceWorker.ready.then((reg) => {
           reg.showNotification(title, { body: body, icon: 'favicon.ico' });
