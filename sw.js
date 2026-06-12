@@ -14,6 +14,23 @@ self.addEventListener('fetch', (event) => {
     // अभी हम सीधे इंटरनेट से फाइलें लोड होने दे रहे हैं
     event.respondWith(fetch(event.request));
 });
+self.addEventListener('push', function(event) {
+  const data = event.data.json();
+  
+  const options = {
+    title:body.title,
+    body: data.body,
+    icon: 'favicon.ico',
+    image: 'images/1780194342263.png', // Image banner ke liye
+     requireInteraction: true
+    // actions array hata diya
+  };
+
+  event.waitUntil(
+    self.registration.showNotification(data.title, options)
+  );
+});
+
 self.addEventListener('install', (e) => self.skipWaiting());
 
 self.addEventListener('notificationclick', (event) => {
