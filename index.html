@@ -50,6 +50,25 @@
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
      </head>
   <body>
+        <audio id="myAudio">
+    <source src="audio/AUD-20260627-WA0007.mp4" type="audio/mpeg">
+    Aapka browser audio support nahi karta.
+  </audio>
+ 
+  <span onclick="playAudio()"style='font-size:90px;'>&#127908; <h6>ऑडियो सुनने के लिए माइक पर क्लिक करें।</h6></span>
+
+  <script>
+    function playAudio() {
+      var x = document.getElementById("myAudio");
+      x.play();
+    }
+  </script>
+  <style>
+    h6{
+        margin-left: 3cm;
+    }
+  </style>
+
          <style>
          .flower {
             position: fixed; 
@@ -307,8 +326,7 @@
     <div class="heading-container">
         <h2>Our Digital & Documentation Services</h2>
      </div>
-    <img  class="hj8"src="images/1781683263761.png">
-
+ 
     <!-- Main Container -->
     <div class="slider-container" id="marqueeSlider">
         <div class="slider-track" id="sliderTrack">
