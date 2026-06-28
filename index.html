@@ -5,6 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+                 <meta name="og:site_name" content="https://deepakag285-stack.github.io/College-1/"/>
+             <meta name="og:title" content="deepak aggarwal digital"/>
+            <meta property="og:type" content="website" />
+            <meta name="og:description" content="this site is design for helping collegeous to get pyq of nep & one can get more information and provide csc facility."/>
+        <meta property="og:image" content="https://postimg.cc/D4vj2cFD"/>
+        <meta property="og:url" content="https://deepakag285-stack.github.io/College-1/"/>
+        <meta name="twitter:card" content="summary_large_image"/>
+                    <link rel="alternate" href="https://deepakag285-stack.github.io/College-1/" hreflang="en">
+            <link rel="alternate" href="https://deepakag285-stack.github.io/College-1/" hreflang="hi">
+        <meta name="twitter:title" content="deepak aggarwal digital "/>
+        <meta name="twitter:description" content="from deepak aggarwal you can get more details about sites and get your sites today."/>
+        <meta name="twitter:image" content="https://deepakag285-stack.github.io/College-1/images/IMG_20260513_192231.png"/>
+        <meta name="keywords" content=" deepak aggarwal digital,deepak web developer,top 10 web developers,best developer in india, vaish college bhiwani,deepak aggarwal vaish college bhiwani,vaish college bhiwani,deepak aggarwal hbse,haryana board of school education-haryana, hbse board, cblu university,deepak aggarwal,aggarwal deepak web developer, 8684899869,8684899861, deepak web developer contact,web developer in haryana,web developer in india, deepak web developer website, deepak aggarwal in india,deepak aggarwal in haryana,deepak aggarwal in Bhiwani,deepak web developer services,deepak coder, deepak web developer portfolio, deepak web developer projects, deepak web developer skills, deepak web developer experience, deepak web developer reviews, deepak web developer testimonials, deepak web developer pricing, deepak web developer availability, deepak web developer location, deepak web developer social media, deepak web developer blog, deepak web developer newsletter"/>
+        <meta name="description" content="from deepak aggarwal you can get more details about sites and get your sites today.">
+         <link rel="manifest" href="manifest.json">
+         <link rel="shortcut icon" href="images/IMG_20260511_175810.jpg" type="image/jpg" />
+                           <link rel="icon" type="image/jpg" href="images/IMG_20260511_175810.jpg"/>
+          <title>deepak aggarwal digital </title>
+
          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="index.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -17,12 +36,246 @@
 
  </head>
  <body>
-    <a href="https://deepakag285-stack.github.io/deepak/"><button class="btn btn-danger">साइट खोलें</button></a>
+     
     <style>
-        button{
-            margin-top: 6cm;
-            margin-left: 2cm;
+        /* Base Reset & Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header section */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #0f172a;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+
+        /* Grid Layout for Cards */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        /* Beautiful Card Design */
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: #3b82f6;
+        }
+
+        /* Card Icons */
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #eff6ff;
+            color: #3b82f6;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .card:hover .card-icon {
+            background-color: #3b82f6;
+            color: #ffffff;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            color: #1e293b;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-section h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #0f172a;
+        }
+
+        .contact-section p {
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size: 1rem;
+        }
+
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #20ba5a;
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-email {
+            background-color: #ea4335;
+            color: white;
+        }
+
+        .btn-email:hover {
+            background-color: #d93025;
+            box-shadow: 0 4px 14px rgba(234, 67, 53, 0.4);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .contact-buttons {
+                flex-direction: column;
+            }
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
         }
     </style>
- </body>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>Welcome to Our college/school& Service Portal</h1>
+            <p>Your one-stop destination for academic resources and digital solutions</p>
+        </header>
+     <a href="https://deepakag285-stack.github.io/deepak/"><button class="btn btn-danger">open site</button></a>
+          <div class="services-grid">
+            
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h3>UG Course PYQs</h3>
+                <p>Access Previous Year Questions (PYQs) for all Undergraduate courses, strictly aligned with the latest National Education Policy (NEP) guidelines.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+                <h3>UG Syllabus & Results</h3>
+                <p>Stay updated with the official and latest curriculum frameworks, syllabus copies, and immediate semester result announcements for UG programs.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-school"></i>
+                </div>
+                <h3>School Corner</h3>
+                <p>Get instant access to school-level examination results, upcoming datesheets, timetables, and academic syllabus updates.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-circle-question"></i>
+                </div>
+                <h3>Query Support</h3>
+                <p>Stuck somewhere? Get your academic doubts resolved and receive accurate solutions to your queries seamlessly.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <h3>CSC Services Available</h3>
+                <p>Avail professional Common Service Centre (CSC) facilities including online applications, form submissions, and digital government services.</p>
+            </div>
+
+        </div>
+
+        <div class="contact-section">
+            <h2>Get In Touch</h2>
+            <p>Have questions or need assistance? Reach out to us directly through WhatsApp or Email.</p>
+            <div class="contact-buttons">
+                <a href="https://wa.me/918684899861" target="_blank" class="btn btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+                <a href="mailto:deepakag284@gmail.com" class="btn btn-email">
+                    <i class="fa-regular fa-envelope"></i> Email Us
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+ 
+  </body>
  </html>
