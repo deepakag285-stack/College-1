@@ -44,13 +44,26 @@
     <script> 
     const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwP8JqYoFZUzZ1ID9jFrYu4khjGH7ZSJ-to1PETJKXY26ArlfEOZ-gvqoerVF-W71Oi/exec"; // Yahan wo URL paste karein jo aapne Step 1 mein copy kiya tha
 
+  let userPhone = localStorage.getItem('visitorPhone');
+
+if (!userPhone) {
+    userPhone = prompt("Enter your phone number to continue:");
+    if (userPhone) {
+        localStorage.setItem('visitorPhone', userPhone);
+    } else {
+        userPhone = "Not Provided";
+    }
+}
+
+// Default value agar phone number na mile
 document.addEventListener('click', (e) => {
     const log = {
+        phone:userPhone, // User ka phone number
         tag: e.target.tagName,
         x: e.clientX,
         y: e.clientY,
         time: new Date().toLocaleTimeString(),
-        device: navigator.userAgent // Isse pata chalega user ka phone/browser kaunsa hai
+        device: getDeviceType() // Isse pata chalega user ka phone/browser kaunsa hai
     };
     
     // Data ko Google Sheet mein bhejein
