@@ -19,11 +19,18 @@
         <meta name="description" content="from deepak aggarwal you can get more details about sites and get your sites today.">
          <link rel="manifest" href="manifest.json">
          <link rel="shortcut icon" href="images/IMG_20260511_175810.jpg" type="image/jpg" />
-                           <link rel="icon"  href="https://deepakag285-stack.github.io/College-1/images/IMG_20260511_175810.jpg" sizes="32*32"/>
-          <link rel="icon"  href="https://deepakag285-stack.github.io/College-1/images/IMG_20260511_175810.jpg" sizes="192*192"/>
- <meta name="msapplication -TileImage" content="https://deepakag285-stack.github.io/College-1/images/IMG_20260511_175810.jpg" />
- <title>deepak aggarwal developer | web developer  </title>
-           
+                           <link rel="icon" type="image/jpg" href="images/IMG_20260511_175810.jpg"/>
+          <title>deepak aggarwal developer | web developer  </title>
+          <script type="application/ld+json" class="yoast-schema-graph">
+         {
+  "@context":"https://schema.org",
+  "@type": "Person",
+  "name": "Deepak Aggarwal",
+  "jobTitle": "Web Developer",
+  "image": "https://deepakag285-stack.github.io/College-1/favicon.ico",
+  "url": "https://deepakag285-stack.github.io/College-1"
+}
+</script>   
      <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -36,48 +43,47 @@
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
+    <link rel="">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
      </head>
   <body>
-    <script> 
-    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwP8JqYoFZUzZ1ID9jFrYu4khjGH7ZSJ-to1PETJKXY26ArlfEOZ-gvqoerVF-W71Oi/exec"; // Yahan wo URL paste karein jo aapne Step 1 mein copy kiya tha
+    <script>
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzifsJ0rXDEvshRrYSCRPplbK4_lShKRdUNCLcbai69ciGuk4enNF8KwanknTR4pKdsbw/exec"; 
+    const startTime = Date.now();
 
-  let userPhone = localStorage.getItem('visitorPhone');
-
-if (!userPhone) {
-    userPhone = prompt("Enter your phone number to continue:");
-    if (userPhone) {
-        localStorage.setItem('visitorPhone', userPhone);
-    } else {
-        userPhone = "Not Provided";
+    // Device ka detailed naam nikalne ka function
+    async function getFullDeviceName() {
+        // Modern browsers ke liye (Chrome/Edge/Android)
+        if (navigator.userAgentData) {
+            const highEntropyValues = await navigator.userAgentData.getHighEntropyValues(['model', 'platform', 'platformVersion']);
+            return `${highEntropyValues.platform} - ${highEntropyValues.model || 'Unknown Model'}`;
+        }
+        // Purane browsers ke liye fallback
+        return navigator.userAgent.split('(')[1].split(')')[0]; 
     }
-}
 
-// Default value agar phone number na mile
-document.addEventListener('click', (e) => {
-    const log = {
-        phone:userPhone, // User ka phone number
-        tag: e.target.tagName,
-        x: e.clientX,
-        y: e.clientY,
-        time: new Date().toLocaleTimeString(),
-        device: getDeviceType() // Isse pata chalega user ka phone/browser kaunsa hai
-    };
-    
-    // Data ko Google Sheet mein bhejein
-    fetch(WEB_APP_URL, {
-        method: "POST",
-        mode: "no-cors", // Cross-origin request ke liye
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(log)
-    })
-    .then(() => console.log("Data sent to Sheet!"))
-    .catch(err => console.error("Error:", err));
-});
+    async function sendData() {
+        const stayDuration = Math.round((Date.now() - startTime) / 1000) + " seconds";
+        const deviceName = await getFullDeviceName(); // Device name fetch karein
+        
+        const log = {
+            time: new Date().toLocaleTimeString(),
+            device: deviceName,
+            duration: stayDuration
+        };
+        
+        fetch(WEB_APP_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(log)
+        });
+    }
 
+    window.addEventListener("beforeunload", sendData);
 </script>
+
         <audio id="myAudio">
     <source src="audio/AUD-20260627-WA0007.mp4" type="audio/mpeg">
     Aapka browser audio support nahi karta.
