@@ -48,6 +48,30 @@
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
      </head>
   <body>
+    <script> 
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwP8JqYoFZUzZ1ID9jFrYu4khjGH7ZSJ-to1PETJKXY26ArlfEOZ-gvqoerVF-W71Oi/exec"; // Yahan wo URL paste karein jo aapne Step 1 mein copy kiya tha
+
+document.addEventListener('click', (e) => {
+    const log = {
+        tag: e.target.tagName,
+        x: e.clientX,
+        y: e.clientY,
+        time: new Date().toLocaleTimeString(),
+        device: navigator.userAgent // Isse pata chalega user ka phone/browser kaunsa hai
+    };
+    
+    // Data ko Google Sheet mein bhejein
+    fetch(WEB_APP_URL, {
+        method: "POST",
+        mode: "no-cors", // Cross-origin request ke liye
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(log)
+    })
+    .then(() => console.log("Data sent to Sheet!"))
+    .catch(err => console.error("Error:", err));
+});
+
+</script>
         <audio id="myAudio">
     <source src="audio/AUD-20260627-WA0007.mp4" type="audio/mpeg">
     Aapka browser audio support nahi karta.
